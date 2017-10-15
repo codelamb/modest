@@ -7,15 +7,18 @@
 	<title>{{ .Title }}</title>
 	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+	<style>
+      {{ partial "critical-theme.css" | safeCSS }}
+    </style>
 	<link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
 	{{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
 	{{ .Hugo.Generator }}
 </head>
 <body>
 	<header>
-		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+		<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
 		<nav>
-			<ul>
+			<ul class="nav inline-items">
 				{{ range .Site.Menus.main }}
 				<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
 				{{ end }}
