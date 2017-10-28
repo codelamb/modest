@@ -15,10 +15,11 @@
 	{{ .Hugo.Generator }}
 </head>
 <body>
-	<header>
-		<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-		<nav>
-			<ul class="nav inline-items">
+  <div class="wrapper">
+	<header class="main-head">
+		<h2><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
+		<nav class="main-nav">
+			<ul>
 				{{ range .Site.Menus.main }}
 				<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
 				{{ end }}

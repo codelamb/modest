@@ -1,11 +1,9 @@
-{{ partial "header.html" . }}
-<div class="left-column">	
-	<main>
+{{ partial "header.html" . }}	
+	<main class="content">
 		{{ $paginator := .Paginate (where .Site.Pages "Type" "naujienos") }}
 		{{ range $paginator.Pages }}
 			{{ partial "summary.html" . }}
 		{{ end }}
 		{{ partial "pagination.html" . }}
 	</main>
-</div>
 {{ partial "footer.html" . }}

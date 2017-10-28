@@ -2,71 +2,71 @@
 @text-color: #333;
 @post-heading-color: #428bca;
 
-html {
-  box-sizing: border-box;
+* {box-sizing: border-box;}
+
+    .wrapper {
+        max-width: 1024px;
+        margin: 0 auto;
+        font: 1.2em Helvetica, arial, sans-serif;
+    }
+
+    .wrapper > * {
+        border: 2px solid #f08c00;
+        background-color: #ffec99;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+.main-head {
+  grid-area: header;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
+.content {
+  grid-area: content;
 }
-
-body { margin: 0 auto; }
-
-footer, header { position: relative; clear: both; }
-
-.left-column, .right-column, footer, header {  border: 1px solid  #ccc; padding: 1.25em; margin: .5em; }
-
-.nav {
-  list-style: none;
-  margin-left: 0;
-  margin-bottom: 0;
-  padding-left: 0;
+.main-nav {
+  grid-area: nav;
+  flex-direction: row;
 }
-
-.nav > li,
-.nav > li > a {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
+.side {
+  grid-area: sidebar;
 }
-
-.inline-items {
-  margin-top: 0;
+.main-footer {
+  grid-area: footer;
 }
-
-.inline-items li {
-  margin-left: 0;
-  border-left: 1px solid black;
-  padding-left: 10px;
-  padding-right: 10px;
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: 
+    "header"
+	"nav"
+    "content"
+    "sidebar"
+    "footer";
 }
-
-.inline-items li:first-child {
-  margin-left: 0;
-  border: none;
-  padding-left: 0;
-  padding-right: 10px;
+.sticky-box{
+  display: box;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
 }
-
-.inline-items li:last-child {
-  padding-right: 0;
-}
-
-
-/* MEDIA QUERIES */
-@media screen and (min-width: 47.5em ) {
-
-	.columns-container { 
-		float: left;
-	}
-
-  .left-column { 
-    margin-right: 20em;
-		float: left;
+@media (min-width: 47.5em) {
+  .wrapper {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+      "header  header"
+      "content sidebar"
+      "footer  footer";
   }
-
-	.right-column { 
-    width: 18.75em;
-		margin-left: -19.3em;
-		float: left;
-  }   
+  .main-nav ul {
+    display: flex;
+	li {
+	    margin-right: 1em;
+	}
+  }
 }

@@ -1,7 +1,5 @@
-{{ partial "header.html" . }}
-<div class="columns-container">	
-<div class="left-column">	
-	<main>
+{{ partial "header.html" . }}	
+	<main class="content">
 		<article>
 			<h1>{{ .Title }}</h1>
 			<time>{{ .Date.Format "2006-02-01 15:04" }}</time>
@@ -20,9 +18,5 @@
 			</div>
 		</article>
 	</main>
-</div>
-<div class="right-column">
 {{ partial "sidebar.html" . }}
-</div>
-</div>
 {{ partial "footer.html" . }}
