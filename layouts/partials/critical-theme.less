@@ -1,72 +1,107 @@
 @background-color: #ffffff;
 @text-color: #333;
 @post-heading-color: #428bca;
+@frame-color: grey;
 
 * {box-sizing: border-box;}
 
-    .wrapper {
-        max-width: 1024px;
-        margin: 0 auto;
-        font: 1.2em Helvetica, arial, sans-serif;
-    }
+a {
+    color: @post-heading-color;
+    text-decoration: none;
+}
 
-    .wrapper > * {
-        border: 2px solid #f08c00;
-        background-color: #ffec99;
-        border-radius: 5px;
-        padding: 10px;
-    }
+::selection {
+  background: lightblue;
+}
+.wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    font: 1em;
+}
+.wrapper > * {
+    /*border: 1px solid @frame-color;*/
+    background-color: @background-color;
+    /*border-radius: 5px;*/
+    padding: 10px;
+}
 
-    nav ul {
+.main-head {
+  grid-area: header;
+}
+
+.content {
+  grid-area: content;
+}
+
+.main-nav {
+  grid-area: nav;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.side {
+  grid-area: sidebar;
+    ul {
         list-style: none;
         margin: 0;
         padding: 0;
     }
-.main-head {
-  grid-area: header;
 }
-.content {
-  grid-area: content;
-}
-.main-nav {
-  grid-area: nav;
-  flex-direction: row;
-}
-.side {
-  grid-area: sidebar;
-}
+
 .main-footer {
   grid-area: footer;
 }
+
+.list{
+  grid-area:list;
+}
+
+@supports ((display: -ms-grid) or (display: grid)) {
 .wrapper {
+  display: -ms-grid;
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 10px;
   grid-template-areas: 
     "header"
 	"nav"
     "content"
+	"list"
     "sidebar"
     "footer";
+  }
 }
 .sticky-box{
   display: box;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  align-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
+
 @media (min-width: 47.5em) {
   .wrapper {
-    grid-template-columns: 2fr 1fr;
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+	grid-auto-flow: column;
     grid-template-areas: 
       "header  header"
       "content sidebar"
+	  "list list"
       "footer  footer";
   }
   .main-nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;	
 	li {
 	    margin-right: 1em;
 	}
   }
 }
+

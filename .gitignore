@@ -2,3 +2,4 @@
 layouts/partials/critical-theme-grid.txt
 layouts/partials/critical-theme-last.txt
 *.txt
+layouts/partials/critical-theme.css
