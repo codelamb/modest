@@ -3,12 +3,26 @@
 	</footer>
   </div>
   <script type="text/javascript">
-[].forEach.call(document.querySelectorAll('img[data-src]'),    function(img) {
-  img.setAttribute('src', img.getAttribute('data-src'));
-  img.onload = function() {
-    img.removeAttribute('data-src');
-  };
-});
+  function downloadJSAtOnload() {
+      var element = document.createElement("script");
+      element.src = "/js/defer.js";
+      document.body.appendChild(element);
+  }
+  if (window.addEventListener)
+      window.addEventListener("load", downloadJSAtOnload, false);
+  else if (window.attachEvent)
+      window.attachEvent("onload", downloadJSAtOnload);
+  else 
+      window.onload = downloadJSAtOnload;
+function DeferLoadImages() {
+  var imgDefer = document.getElementsByTagName('img');
+  for (var i=0; i<imgDefer.length; i++) {
+    if(imgDefer[i].getAttribute('data-src')) {
+      imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+    } 
+  } 
+}
+DeferLoadImages();
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
