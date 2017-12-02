@@ -2,7 +2,7 @@
   <img data-src="{{ .Get "src" }}"
     src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
     alt="{{ .Get "alt" }}" 
-    width="{{ .Get "w" }}" height="{{ .Get "h" }}"/>
+    width="{{ .Get "w" }}" height="{{ .Get "h" }}" style="max-width:{{ .Get "maxw" }}"/>
 
   <noscript>
     <img src="{{ .Get "src" }}"

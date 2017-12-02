@@ -2,8 +2,10 @@
 @text-color: #333;
 @post-heading-color: #428bca;
 @frame-color: grey;
+@hover-color: gainsboro;
 
-* {box-sizing: border-box;}
+* {box-sizing: border-box;
+}
 
 a {
     color: @post-heading-color;
@@ -27,6 +29,9 @@ a {
 
 .main-head {
   grid-area: header;
+  a:hover { 
+  background-color: @hover-color;
+  }
 }
 
 .content {
@@ -48,6 +53,9 @@ a {
         margin: 0;
         padding: 0;
     }
+	a:hover { 
+    background-color: @hover-color;
+}
 }
 
 .main-footer {
@@ -108,11 +116,15 @@ figure{
 margin: 0; padding: 0;
 }
 img {
+  height: auto;
   opacity: 1;
   transition: opacity 0.3s;
 }
 
 img[data-src] {
   opacity: 0;
+}
+img {
+    height: auto;
 }
 
