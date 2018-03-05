@@ -4,12 +4,16 @@
 @frame-color: grey;
 @hover-color: gainsboro;
 
-* {box-sizing: border-box;
+* {-webkit-box-sizing: border-box;box-sizing: border-box;
 }
 
 a {
     color: @post-heading-color;
     text-decoration: none;
+}
+
+::-moz-selection {
+  background: lightblue;
 }
 
 ::selection {
@@ -71,14 +75,13 @@ a {
   grid-area:list;
 }
 .sticky-box{
-  display: box;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   -ms-flex-item-align: start;
       align-self: flex-start;
 }
-@supports ((display: -ms-grid) or (display: grid)) {
+@supports (display: grid) {
 .wrapper {
   display: -ms-grid;
   display: grid;
@@ -101,6 +104,14 @@ a {
 	li {
 	    margin-right: 0.5em;
 	}
+  }
+  figure.resp {
+    float: left;
+    width: 100%;
+    font-style: italic;
+    font-size: normal;
+    margin: 0;
+    padding: 0;
   }
 }
 @media (min-width: 47.5em) {
@@ -125,6 +136,14 @@ a {
 	    margin-right: 0.5em;
 	}
   }
+  figure.resp {
+    float: left;
+    width: 50%;
+    font-style: italic;
+    font-size: smaller;
+    margin: 0;
+    padding: 0 25px 0 0;
+  }
 }
 #myBtn {
   display: none;
@@ -145,7 +164,9 @@ a {
   background-color: #555;
   color: white;
 }
-figure {
-  margin: 0;
+img.respimg {
+  width: 100%;
   padding: 0;
-}
+  margin: 0;
+  }
+
