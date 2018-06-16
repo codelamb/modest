@@ -18,11 +18,5 @@
     <button onclick="topFunction()" id="myBtn" title="Go to top">Į viršų</button>
 	<header class="main-head">
 		<h2><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
-		<nav class="main-nav">
-			<ul>
-				{{ range .Site.Menus.main }}
-				<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-				{{ end }}
-			</ul>
-		</nav>
+		{{ partial "navigation.html" . }}
 	</header>
