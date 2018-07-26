@@ -1,10 +1,14 @@
-<cloudinary {{ with .Get “class” }}class="{{.}}"{{ end }}>
-{{ with .Get “link”}}{{ end }}
-<img
-sizes="(min-width: 30em) 28em, 100vw"
-srcset=“https://res.cloudinary.com/howardm19/image/upload/f_auto,q_70,w_256/{{ .Get “filename” }}.jpg 256w,
-https://res.cloudinary.com/howardm19/image/upload/f_auto,q_70,w_512/{{ .Get “filename” }}.jpg 512w,
-https://res.cloudinary.com/howardm19/image/upload/f_auto,q_70,w_768/{{ .Get “filename” }}.jpg 768w,
-https://res.cloudinary.com/howardm19/image/upload/f_auto,q_70,w_1024/{{ .Get “filename” }}.jpg 1024w,
-https://res.cloudinary.com/howardm19/image/upload/f_auto,q_70,w_1280/{{ .Get “filename” }}.jpg 1280w”
-src=“https://res.cloudinary.com/howardm19/image/upload/f_auto,q_70,w_512/{{ .Get “filename” }}.jpg”
+<figure class="resp" {{ with .Get "max-width" }}style="max-width:{{.}}"{{ end }}>
+    <img class="lozad respimg" dsrc="{{.Site.Params.cloudinary_base_url}}{{.Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }}sizes="100vw" srcset="
+{{.Site.Params.cloudinary_base_url}}q_auto/w_250/{{.Get "src" }} 250w,
+{{.Site.Params.cloudinary_base_url}}q_auto/w_500/{{.Get "src" }} 500w,
+{{.Site.Params.cloudinary_base_url}}q_auto/w_750/{{.Get "src" }} 750w, 
+{{.Site.Params.cloudinary_base_url}}q_auto/w_425/{{.Get "src" }} 900w,
+{{.Site.Params.cloudinary_base_url}}q_auto/w_425/{{.Get "src" }} 1200w,"
+/>
+<figcaption>{{ if isset .Params "title" }}
+    {{ .Get "title" }}{{ end }}
+    {{ with .Get "attrlink"}}<a href="{{.}}" target="_blank"> {{ end }}
+    {{ if .Get "attrlink"}}Paveikslo šaltinis</a> {{ end }}
+</figcaption>
+</figure>

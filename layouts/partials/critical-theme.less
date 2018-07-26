@@ -20,7 +20,7 @@ a {
   background: lightblue;
 }
 .wrapper {
-    max-width: 1024px;
+    max-width: 64em;
     margin: 0 auto;
     font: 1em;
 }
@@ -28,18 +28,18 @@ a {
     /*border: 1px solid @frame-color;*/
     background-color: @background-color;
     /*border-radius: 5px;*/
-    padding: 10px;
+    padding: 0.625em;
 }
 
 .main-head {
   grid-area: header;
   a {
-  padding: 5px;
+  padding: 0.3125em;
   }
   a:hover { 
   background-color: @hover-color;
-  border-radius: 2px;
-  padding: 5px;
+  border-radius: 0.125em;
+  padding: 0.3125em;
   }
 }
 .content {
@@ -92,12 +92,12 @@ a {
 .wrapper {
   display: -ms-grid;
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 0.625em;
   grid-template-areas: 
     "header"
-	"nav"
+	  "nav"
     "content"
-	"list"
+	  "list"
     "sidebar"
     "footer";
   }
@@ -118,19 +118,18 @@ a {
     font-style: italic;
     font-size: normal;
     margin: 0;
-    padding: 0 25px 0 0;;
+    padding: 0 1.5625em 0 0;
   }
 }
 @media (min-width: 47.5em) {
   .wrapper {
-    -ms-grid-columns: 2fr 1fr;
-    grid-template-columns: minmax(200px, 3fr) minmax(250px, 1fr);
-	grid-auto-flow: column;
+    grid-template-columns: 2.5fr 1fr;
+	  grid-auto-flow: column;
     grid-template-areas: 
-      "header  header"
+      "header header"
       "content sidebar"
-	  "list list"
-      "footer  footer";
+	    "list list"
+      "footer footer";
   }
   .main-nav ul {
     display: -webkit-box;
@@ -149,22 +148,22 @@ a {
     font-style: italic;
     font-size: smaller;
     margin: 0;
-    padding: 0 25px 0 0;
+    padding: 0 1.5em 0 0;
   }
 }
 #myBtn {
   display: none;
   position: fixed;
-  bottom: 20px;
-  right: 30px;
+  bottom: 1.25em;
+  right: 1.875em;
   z-index: 50;
   border: none;
   outline: none;
   background-color: @hover-color;
   color: @text-color;
   cursor: pointer;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 1em;
+  border-radius: 0.625em;
   opacity:0.7;
 }
 #myBtn:hover {
