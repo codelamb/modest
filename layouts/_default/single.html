@@ -2,9 +2,11 @@
 	<main class="content">
 		<article>
 			<h1>{{ .Title }}</h1>
+			{{- with .Content -}}
 			<div>
-				{{ .Content }}
+			  {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> ${3}` | safeHTML }}
 			</div>
+			{{- end -}}
 			<div>
 				<ul id="tags">
 					{{ range .Params.tags }}

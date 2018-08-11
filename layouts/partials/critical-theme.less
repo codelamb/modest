@@ -71,7 +71,8 @@ a {
     }
 	a:hover { 
     background-color: @hover-color;
-}
+  }
+
 }
 
 .main-footer {
@@ -86,7 +87,7 @@ a {
   position: sticky;
   top: 0;
   -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
 }
 @supports (display: grid) {
 .wrapper {
@@ -118,7 +119,7 @@ a {
     font-style: italic;
     font-size: normal;
     margin: 0;
-    padding: 0 1.5625em 0 0;
+    padding: 0 1.5em 1em 0;
   }
 }
 @media (min-width: 47.5em) {
@@ -148,7 +149,7 @@ a {
     font-style: italic;
     font-size: smaller;
     margin: 0;
-    padding: 0 1.5em 0 0;
+    padding: 0 1.5em 1em 0;
   }
 }
 #myBtn {
@@ -185,3 +186,5 @@ time{
 	padding-top: 1em;
 }
 
+.hanchor { font-size: 100%; visibility: hidden; color:silver;}
+h1:hover a, h2:hover a, h3:hover a, h4:hover a { visibility: visible}
