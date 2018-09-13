@@ -25,10 +25,10 @@ Cloudinary automaticaly makes picture manipulations and serve the size you need.
 ## TODO
 - i18n.
 ## Credits
-- To Steve Francia (spf13), Bjørn Erik Pedersen (bep) and all [Hugo] (https://gohugo.io/) team
-- To Vimux for Hugo [blank theme] (https://themes.gohugo.io/blank/) which was used as a starter of modest theme. 
-- To Leonardo Santos for [menuspy.js] (https://github.com/lcdsantos/menuspy) which was used to implement scrollspy functionality.
-- To Julian Knight for a snippet how to [add anchors next to headers] (https://discourse.gohugo.io/t/adding-anchor-next-to-headers/1726/13). 
+- To Steve Francia (spf13), Bjørn Erik Pedersen (bep) and all [Hugo](https://gohugo.io/) team
+- To Vimux for Hugo [blank theme](https://themes.gohugo.io/blank/) which was used as a starter of modest theme. 
+- To Leonardo Santos for [menuspy.js](https://github.com/lcdsantos/menuspy) which was used to implement scrollspy functionality.
+- To Julian Knight for a snippet how to [add anchors next to headers](https://discourse.gohugo.io/t/adding-anchor-next-to-headers/1726/13). 
 ## Contributions ...
 ... and feedback are very much welcome.
 
