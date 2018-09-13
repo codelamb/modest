@@ -58,8 +58,9 @@ a {
           flex-direction: row;
 }
 
-.active a {
-	border: 1px solid @post-heading-color;
+.active-nav a {
+  border: 1px solid @post-heading-color;
+  color: @text-color;
 	}
 
 .side {
@@ -72,9 +73,7 @@ a {
 	a:hover { 
     background-color: @hover-color;
   }
-
 }
-
 .main-footer {
   grid-area: footer;
 }
@@ -185,6 +184,11 @@ time{
 .pagination{
 	padding-top: 1em;
 }
-
+/* anchor links in subheadings*/
 .hanchor { font-size: 100%; visibility: hidden; color:silver;}
 h1:hover a, h2:hover a, h3:hover a, h4:hover a { visibility: visible}
+/*prevents inheritance of class in TOC*/
+.active a {
+  color: @text-color;
+  border: 1px solid @post-heading-color;
+}
