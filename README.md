@@ -1,5 +1,5 @@
-# modest is a theme for Hugo static site generator
-It is built with CSS grid and a little bit vanilla Javascript.
+# modest
+Modest is a theme for Hugo static site generator. It is built with CSS grid and a little bit vanilla Javascript.
 ## Design approaches
 - Progressive enhancement. This theme works well enough with javascript turned off. 
 - Content first.
@@ -10,7 +10,7 @@ This theme works well with Cloudinary. You have to specify you cloudinary addres
 ``` toml
 cloudinary_base_url = "https://res.cloudinary.com/geri-darbai/image/upload/"
 ```
-And then can use this shortcode to insert link to picture into markdown with link to specific picture:
+And then you can use this shortcode to insert link to picture into markdown with link to specific picture:
 ``` HTML
 {{<cloudinary src="cloudinary-folder/name-of-picture.jpg" max-width="30em" alt="Alternative text" title="Picture title" attrlink="https://example.com">}}
 ```
