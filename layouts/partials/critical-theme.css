@@ -1,88 +1,78 @@
-@background-color: #ffffff;
-@text-color: black;
-@post-heading-color: #3079b8;
-@frame-color: grey;
-@hover-color: gainsboro;
-
-
-* {-webkit-box-sizing: border-box;box-sizing: border-box;
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 a {
-    color: @post-heading-color;
-    text-decoration: none;
+  color: #3079b8;
+  text-decoration: none;
 }
-
 ::-moz-selection {
   background: lightblue;
 }
-
 ::selection {
   background: lightblue;
 }
 .wrapper {
-    max-width: 64em;
-    margin: 0 auto;
-    font: 1em;
+  max-width: 64em;
+  margin: 0 auto;
+  font: 1em;
 }
 .wrapper > * {
-    /*border: 1px solid @frame-color;*/
-    background-color: @background-color;
-    /*border-radius: 5px;*/
-    padding: 0.625em;
+  /*border: 1px solid @frame-color;*/
+  background-color: #ffffff;
+  /*border-radius: 5px;*/
+  padding: 0.625em;
 }
-
 .main-head {
   grid-area: header;
-  a {
+}
+.main-head a {
   padding: 0.3125em;
-  }
-  a:hover { 
-  background-color: @hover-color;
+}
+.main-head a:hover {
+  background-color: gainsboro;
   border-radius: 0.125em;
   padding: 0.3125em;
-  }
 }
 .content {
   grid-area: content;
-  h1, h2, h3, h4, h5 {
-    clear: both;
-  }
 }
-
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5 {
+  clear: both;
+}
 .main-nav {
   grid-area: nav;
-  
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
-
 .active-nav a {
-  border: 1px solid @post-heading-color;
-  color: @text-color;
-	}
-
+  border: 1px solid #3079b8;
+  color: black;
+}
 .side {
   grid-area: sidebar;
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-	a:hover { 
-    background-color: @hover-color;
-  }
+}
+.side ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.side a:hover {
+  background-color: gainsboro;
 }
 .main-footer {
   grid-area: footer;
 }
-
-.list{
-  grid-area:list;
+.list {
+  grid-area: list;
 }
-.sticky-box{
+.sticky-box {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -90,17 +80,11 @@ a {
   align-self: flex-start;
 }
 @supports (display: grid) {
-.wrapper {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 0.625em;
-  grid-template-areas: 
-    "header"
-	  "nav"
-    "content"
-	  "list"
-    "sidebar"
-    "footer";
+  .wrapper {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 0.625em;
+    grid-template-areas: "header" "nav" "content" "list" "sidebar" "footer";
   }
   .main-nav ul {
     display: -webkit-box;
@@ -108,10 +92,10 @@ a {
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 0;	
-	li {
-	    margin-right: 0.5em;
-	}
+    padding: 0;
+  }
+  .main-nav ul li {
+    margin-right: 0.5em;
   }
   figure.resp {
     float: left;
@@ -125,12 +109,8 @@ a {
 @media (min-width: 47.5em) {
   .wrapper {
     grid-template-columns: 2.5fr 1fr;
-	  grid-auto-flow: column;
-    grid-template-areas: 
-      "header header"
-      "content sidebar"
-	    "list list"
-      "footer footer";
+    grid-auto-flow: column;
+    grid-template-areas: "header header" "content sidebar" "list list" "footer footer";
   }
   .main-nav ul {
     display: -webkit-box;
@@ -138,10 +118,10 @@ a {
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 0;	
-	li {
-	    margin-right: 0.5em;
-	}
+    padding: 0;
+  }
+  .main-nav ul li {
+    margin-right: 0.5em;
   }
   figure.resp {
     float: left;
@@ -160,12 +140,12 @@ a {
   z-index: 50;
   border: none;
   outline: none;
-  background-color: @hover-color;
-  color: @text-color;
+  background-color: gainsboro;
+  color: black;
   cursor: pointer;
   padding: 1em;
   border-radius: 0.625em;
-  opacity:0.7;
+  opacity: 0.7;
 }
 #myBtn:hover {
   background-color: #555;
@@ -175,21 +155,30 @@ img.respimg {
   width: 100%;
   padding: 0;
   margin: 0;
-  }
-time{ 
-	font-weight:normal;
+}
+time {
+  font-weight: normal;
 }
 .summary {
-	padding-top: 1em;
+  padding-top: 1em;
 }
-.pagination{
-	padding-top: 1em;
+.pagination {
+  padding-top: 1em;
 }
 /* anchor links in subheadings*/
-.hanchor { font-size: 100%; visibility: hidden; color:silver;}
-h1:hover a, h2:hover a, h3:hover a, h4:hover a { visibility: visible}
+.hanchor {
+  font-size: 100%;
+  visibility: hidden;
+  color: silver;
+}
+h1:hover a,
+h2:hover a,
+h3:hover a,
+h4:hover a {
+  visibility: visible;
+}
 /*prevents inheritance of class in TOC*/
 .active a {
-  color: @text-color;
-  border: 1px solid @post-heading-color;
+  color: black;
+  border: 1px solid #3079b8;
 }
