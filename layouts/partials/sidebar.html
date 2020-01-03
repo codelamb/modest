@@ -1,5 +1,6 @@
 	<aside class="side">
 		<div class="sticky-box">
+			{{ if and (gt .WordCount 400 ) (ne .Params.toc "false") }}
 			<div>
 				<h3>Turinys</h3>
 			</div>
