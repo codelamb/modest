@@ -38,7 +38,21 @@ for (let item of anchorlinks) { // relitere
 var elm = document.querySelector('#TableOfContents');
 var ms = new MenuSpy(elm, {
     threshold: -50
-  });
+});
+// service worker for PWA
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+              //console.log('Service Worker Registered');
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              //console.log('Service Worker Ready');
+          });
+  }
 </script>
 </body>
 </html>
