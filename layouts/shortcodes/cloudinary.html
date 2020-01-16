@@ -1,5 +1,5 @@
 <figure class="resp" {{ with .Get "max-width" }}style="max-width:{{.}}"{{ end }}>
-    <img class="lozad respimg" dsrc="{{.Site.Params.cloudinary_base_url}}{{.Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }}sizes="100vw" srcset="
+    <img class="respimg" dsrc="{{.Site.Params.cloudinary_base_url}}{{.Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }}sizes="100vw" srcset="
 {{.Site.Params.cloudinary_base_url}}q_auto/w_250/{{.Get "src" }} 250w,
 {{.Site.Params.cloudinary_base_url}}q_auto/w_500/{{.Get "src" }} 500w,
 {{.Site.Params.cloudinary_base_url}}q_auto/w_750/{{.Get "src" }} 750w, 
