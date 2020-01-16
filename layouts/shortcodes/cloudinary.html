@@ -5,10 +5,10 @@
 {{.Site.Params.cloudinary_base_url}}q_auto/w_750/{{.Get "src" }} 750w, 
 {{.Site.Params.cloudinary_base_url}}q_auto/w_425/{{.Get "src" }} 900w,
 {{.Site.Params.cloudinary_base_url}}q_auto/w_425/{{.Get "src" }} 1200w,"
-rel="noreferrer noopener"/>
+/>
 <figcaption>{{ if isset .Params "title" }}
     {{ .Get "title" }}{{ end }}
-    {{ with .Get "attrlink"}}<a href="{{.}}" target="_blank"> {{ end }}
+    {{ with .Get "attrlink"}}<a href="{{.}}" target="_blank" rel="noreferrer noopener"> {{ end }}
     {{ if .Get "attrlink"}}Paveikslo šaltinis</a> {{ end }}
 </figcaption>
 </figure>
