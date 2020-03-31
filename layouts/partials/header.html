@@ -14,6 +14,12 @@
 	{{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
 	{{ .Hugo.Generator }}
 </head>
+  <script src="/upup.min.js"></script>
+  <script>
+    UpUp.start({
+      'content-url': 'offline.html' // show this page to offline users
+    });
+  </script>
 <body>
   <div class="wrapper">
     <button onclick="topFunction()" id="myBtn" title="Go to top">Į viršų</button>
