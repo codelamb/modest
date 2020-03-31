@@ -39,7 +39,7 @@ var elm = document.querySelector('#TableOfContents');
 var ms = new MenuSpy(elm, {
     threshold: -50
 });
-// service worker for PWA
+// Register service worker
 if('serviceWorker' in navigator) {
     const PREFETCH = true;
     const PREFETCH_LINK_RELS = ['index','next', 'prev', 'prefetch'];
