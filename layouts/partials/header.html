@@ -13,6 +13,7 @@
     </style>
 	{{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
 	{{ .Hugo.Generator }}
+<meta name="theme-color" content="#3079b8"/>
 </head>
 {{ partial "pwa.html" }}
 <body>
