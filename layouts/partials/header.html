@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>{{ .Title }}</title>
 	<meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
-	{{ with $.Site.Params.theme-color }}<meta name="theme-color" content="{{ . }}">{{ end }}
+	{{ with $.Site.Params.themecolor }}<meta name="theme-color" content="{{ . }}">{{ end }}
 	{{ with $.Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 	<link rel=manifest href=/manifest.json>
 	<style>
