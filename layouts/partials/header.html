@@ -9,6 +9,7 @@
 	{{ with $.Site.Params.themecolor }}<meta name="theme-color" content="{{ . }}">{{ end }}
 	{{ with $.Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 	<link rel=manifest href=/manifest.json>
+	{{ with $.Site.Params.appletouchicon }}<link rel="apple-touch-icon" href="{{ . }}">{{ end }}
 	<style>
       {{ partial "critical-theme.css" | safeCSS }}
     </style>
