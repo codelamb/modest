@@ -2,7 +2,7 @@
 {{ if .Paginator.HasPrev }}
 	<a href="{{ .Paginator.Prev.URL }}">Ankstesnis puslapis</a>
 {{ end }}
-{{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
+{{ .Paginator.PageNumber }} iš {{ .Paginator.TotalPages }}
 {{ if .Paginator.HasNext }}
 	<a href="{{ .Paginator.Next.URL }}">Sekantis puslapis</a>
 {{ end }}
