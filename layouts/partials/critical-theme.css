@@ -54,9 +54,16 @@ a {
   flex-direction: row;
   padding-top: 0.5em;
 }
+.main-nav a {
+    margin-right: 0.7em;
+}
+.main-nav a:hover {
+    margin-right: 0.7em;
+}
 .active-nav a {
   border: 1px solid #3079b8;
   color: black;
+  margin-right: 0.7em;
 }
 .side {
   grid-area: sidebar;
@@ -87,7 +94,7 @@ a {
     display: -ms-grid;
     display: grid;
     grid-gap: 0.625em;
-    grid-template-areas: "header" "nav" "content" "list" "sidebar" "footer";
+    grid-template-areas: "header" "nav" "content" "list" "sidebar" "modified" "footer";
   }
   .main-nav ul {
     display: -webkit-box;
@@ -98,7 +105,7 @@ a {
     padding: 0;
   }
   .main-nav ul li {
-    margin-right: 0.5em;
+    margin-right: .5em;
   }
   figure.resp {
     float: left;
@@ -112,7 +119,7 @@ a {
   .wrapper {
     grid-template-columns: 2.5fr 1fr;
     grid-auto-flow: column;
-    grid-template-areas: "header header" "content sidebar" "list list" "footer footer";
+    grid-template-areas: "header header" "content sidebar" "list list" "modified modified" "footer footer";
   }
   .main-nav ul {
     display: -webkit-box;
@@ -120,7 +127,8 @@ a {
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding-left: 0;
+    padding-top: 0.8em;
   }
   .main-nav ul li {
     margin-right: 0.5em;
@@ -187,9 +195,14 @@ h4:hover a {
 /*purpose of these 2 are to keep website title align with left*/
 .sitetitle a {
     font-size:2.5em;
-    padding-left: 0;
+    padding: 0;
+    line-height: 1;
 }
 .sitetitle a:hover {
     font-size:2.5em;
-    padding-left: 0;
+    padding: 0;
+    line-height: 1;
+}
+.modified {
+    grid-area: modified;
 }
