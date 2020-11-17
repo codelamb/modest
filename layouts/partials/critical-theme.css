@@ -103,7 +103,7 @@ a {
     display: -ms-grid;
     display: grid;
     grid-gap: 0.625em;
-    grid-template-areas: "header" "nav" "content" "list" "sidebar" "modified" "footer";
+    grid-template-areas: "header" "nav" "sidebar" "content" "list" "modified" "footer";
   }
   .main-nav ul {
     display: -webkit-box;
