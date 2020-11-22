@@ -3,7 +3,7 @@
   <head>
     	<title>{{ .Site.Title }}</title>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="initial-scale=1.002"><!--This strange value is needed to make viewport ad window size equal for the lighthouse pwa score-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
 	{{ with $.Site.Params.themecolor }}<meta name="theme-color" content="{{ . }}">{{ end }}
